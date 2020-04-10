@@ -3,6 +3,11 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+p {
+  color: rgb(85, 47, 146);
 }
+
+h1 {
+  color: rgb(39, 95, 56);
+}
+
