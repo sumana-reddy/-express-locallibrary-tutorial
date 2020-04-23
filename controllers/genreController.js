@@ -1,41 +1,119 @@
-const BookInstance = require('../models/bookinstance');
+const Book = require('../models/book');
+const async = require('async');
+const Genre = require('../models/genre');
+const validator = require('express-validator');
 
-// Display list of all BookInstances.
-exports.bookinstance_list = function(req, res) {
-    res.send('NOT IMPLEMENTED: BookInstance list');
+// Display list of all Genre.
+exports.genre_list = function(req, res) {
+   Genre.find()
+    .populate('genre')
+    .sort([['name','ascending']])
+    .exec(function(err,list_genre){
+        if(err){ return next(err); }
+        res.render('genre_list',{title: 'Genre List', genre_list: list_genre})
+    }); 
+      
+      
 };
 
-// Display detail page for a specific BookInstance.
-exports.bookinstance_detail = function(req, res) {
-    res.send('NOT IMPLEMENTED: BookInstance detail: ' + req.params.id);
+
+// Display detail page for a specific Genre.
+exports.genre_detail = function(req, res,next) {
+    async.parallel({
+        genre: function(callback) {
+            Genre.findById(req.params.id)
+              .exec(callback);
+        },
+
+        genre_books: function(callback) {
+            Book.find({ 'genre': req.params.id })
+              .exec(callback);
+        },
+
+    }, function(err, results) {
+        if (err) { return next(err); }
+        if (results.genre==null) { // No results.
+            var err = new Error('Genre not found');
+            err.status = 404;
+            return next(err);
+        }
+        // Successful, so render
+        res.render('genre_detail', { title: 'Genre Detail', genre: results.genre, genre_books: results.genre_books } );
+    });
 };
 
-// Display BookInstance create form on GET.
-exports.bookinstance_create_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: BookInstance create GET');
+// Display Genre create form on GET.
+exports.genre_create_get = function(req, res, next) {     
+    res.render('genre_form', { title: 'Create Genre' });
+  };
+
+// Handle Genre create on POST.
+exports.genre_create_post = [
+
+ validator.body('name', 'Genre name required').trim().isLength({ min: 1 }),
+  
+// Sanitize (escape) the name field.
+validator.sanitizeBody('name').escape(),
+
+// Process request after validation and sanitization.
+(req, res, next) => {
+
+  // Extract the validation errors from a request.
+  const errors = validator.validationResult(req);
+
+  // Create a genre object with escaped and trimmed data.
+  var genre = new Genre(
+    { name: req.body.name }
+  );
+
+
+  if (!errors.isEmpty()) {
+    // There are errors. Render the form again with sanitized values/error messages.
+    res.render('genre_form', { title: 'Create Genre', genre: genre, errors: errors.array()});
+    return;
+  }
+  else {
+    // Data from form is valid.
+    // Check if Genre with same name already exists.
+    Genre.findOne({ 'name': req.body.name })
+      .exec( function(err, found_genre) {
+         if (err) { return next(err); }
+
+         if (found_genre) {
+           // Genre exists, redirect to its detail page.
+           res.redirect(found_genre.url);
+         }
+         else {
+
+           genre.save(function (err) {
+             if (err) { return next(err); }
+             // Genre saved. Redirect to genre detail page.
+             res.redirect(genre.url);
+           });
+
+         }
+
+       });
+  }
+}
+];
+
+// Display Genre delete form on GET.
+exports.genre_delete_get = function(req, res) {
+    res.send('NOT IMPLEMENTED: Genre delete GET');
 };
 
-// Handle BookInstance create on POST.
-exports.bookinstance_create_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: BookInstance create POST');
+// Handle Genre delete on POST.
+exports.genre_delete_post = function(req, res) {
+    res.send('NOT IMPLEMENTED: Genre delete POST');
 };
 
-// Display BookInstance delete form on GET.
-exports.bookinstance_delete_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: BookInstance delete GET');
+// Display Genre update form on GET.
+exports.genre_update_get = function(req, res) {
+    res.send('NOT IMPLEMENTED: Genre update GET');
 };
 
-// Handle BookInstance delete on POST.
-exports.bookinstance_delete_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: BookInstance delete POST');
-};
-
-// Display BookInstance update form on GET.
-exports.bookinstance_update_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: BookInstance update GET');
-};
-
-// Handle bookinstance update on POST.
-exports.bookinstance_update_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: BookInstance update POST');
+// Handle Genre update on POST.
+exports.genre_update_post = function(req, res) {
+    res.send('NOT IMPLEMENTED: Genre update POST');
 };
