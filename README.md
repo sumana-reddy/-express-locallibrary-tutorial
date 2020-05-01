@@ -1,9 +1,5 @@
 # express-locallibrary-tutorial.
-
-
-<body>
-
-  <h2 style="text-align:center;">Welcome to Local Library</h2>
+<h2 style="text-align:center;">Welcome to Local Library</h2>
 
 <ul style="text-align:left;" colour="blue">
   <li>Home</li>
@@ -19,16 +15,9 @@
   <li>Create new Book</li>
   <li>Create new Book-instances copy</li>
 </ul>
-<h1 style="text-align:center;">LocalLibrary to show patrons available books. </h1>
-
-
-
-<article style="text-align:center;" >
+<h1 style="text-align:center;" style="color:#FF0000"; >LocalLibrary to show patrons available books. </h1>
 
 <img src="https://comps.canstockphoto.com/composition-with-vintage-old-hardback-stock-images_csp34114456.jpg" alt="book image" height="200" width="200" class="center">
-
-</article>
-</body>
 
 <ul>
       <li> strong Books: 10</li>
@@ -36,9 +25,8 @@
       <li> strong Copies available: 4 </li>
       <li> strong Authors: 5</li>
       <li> strong Genres: 2</li>
-  
-
-<footer style="text-align:center;">
+</ul>  
+  <footer style="text-align:center;">
 Reference:
 
 <a href="https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm">Tutorials point</a>

@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color:orchid;
+  background-color:rgb(153, 89, 94);
 }
 a {
   color:black;
@@ -19,6 +19,7 @@ p{
 color:rgb(78, 78, 78)
 }
 h1{color: darkslategrey}
+
 li{
 color:rgb(78, 78, 78)
 }
