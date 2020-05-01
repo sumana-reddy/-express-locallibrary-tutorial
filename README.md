@@ -14,7 +14,7 @@
   <li>All genres</li>
   <li>All Book-instances</li>
 </ul>
-</nav>
+
 
 <article>
 <h1>LocalLibrary to show patrons available books. </h1>
@@ -34,11 +34,11 @@
 
 
 <ul>
-      <li> #[strong Books:] !{data.book_count}</li>
-      <li> #[strong Copies:] !{data.book_instance_count}</li>
-      <li> #[strong Copies available:] !{data.book_instance_available_count} </li>
-      <li> #[strong Authors:] !{data.author_count}</li>
-      <li> #[strong Genres:] !{data.genre_count}</li>
+      <li> strong Books: 10</li>
+      <li> strong Copies:] 6</li>
+      <li> strong Copies available:] 4 </li>
+      <li> strong Authors: 5</li>
+      <li> strong Genres: 2</li>
   
 
 <footer>
