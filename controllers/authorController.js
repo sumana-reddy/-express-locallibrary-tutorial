@@ -20,13 +20,16 @@ exports.author_detail = function(req, res) {
     res.send('NOT IMPLEMENTED: Author detail: ' + req.params.id);
 };
 
+
 // Display Author create form on GET.
 exports.author_create_get = function(req, res, next) {       
     res.render('author_form', { title: 'Create Author'});
 };
 
 // Handle Author create on POST.
+// Handle Author create on POST.
 exports.author_create_post = [
+
     // Validate fields.
     body('first_name').isLength({ min: 1 }).trim().withMessage('First name must be specified.')
         .isAlphanumeric().withMessage('First name has non-alphanumeric characters.'),
@@ -41,7 +44,7 @@ exports.author_create_post = [
     sanitizeBody('date_of_birth').toDate(),
     sanitizeBody('date_of_death').toDate(),
 
- // Process request after validation and sanitization.
+    // Process request after validation and sanitization.
     (req, res, next) => {
 
         // Extract the validation errors from a request.
