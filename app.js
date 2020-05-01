@@ -1,24 +1,56 @@
-let createError = require('http-errors');
-let express = require('express');
-let path = require('path');
-let cookieParser = require('cookie-parser');
-let logger = require('morgan');
+Skip to content
+Why GitHub? 
+Team
+Enterprise
+Explore 
+Marketplace
+Pricing 
+Search
+
+Sign in
+Sign up
+LinGill21
+/
+express-locallibrary-tutorial-MVCDemo
+102
+ Code
+ Issues 0
+ Pull requests 0 Actions
+ Projects 0
+ Security 0
+ Insights
+Join GitHub today
+GitHub is home to over 40 million developers working together to host and review code, manage projects, and build software together.
+
+express-locallibrary-tutorial-MVCDemo/app.js /
+@LinGill21 LinGill21 preped fro heroku
+f94206e 3 days ago
+58 lines (48 sloc)  1.68 KB
+  
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const catalogRouter = require('./routes/catalog'); 
+const compression = require('compression');
 const dotenv = require('dotenv')
+const helmet = require('helmet');
 
-let indexRouter = require('./routes/index');
-let usersRouter = require('./routes/users');
-const catalogRouter = require('./routes/catalog');  //Import routes for "catalog" area of site
-
-let app = express();
+//setting up database
+const app = express();
+app.use(helmet());
 dotenv.config({ path: '.env' })
-//Set up mongoose connection
-let mongoose = require('mongoose');
-let mongoDB = 'mongodb+srv://<s538360@nwmissouri.edu>:<Rakesh@11>@cluster0-gd0nc.mongodb.net/local_library?retryWrites=true&w=majority';
-ATLAS_URI='mongodb+srv://<s538360@nwmissouri.edu>:<Rakesh@11>@cluster0-elcct.mongodb.net/local_library?retryWrites=true&w=majority';
+const mongoose = require('mongoose');
+
+const dev_db_url = process.env.ATLAS_URI
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
-let db = mongoose.connection;
+mongoose.Promise = global.Promise;
+const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-dev_db_url = process.env.ATLAS_URI
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,11 +60,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/catalog', catalogRouter);  // Add catalog routes to middleware chain.
+app.use('/catalog', catalogRouter);
 
 
 // catch 404 and forward to error handler
@@ -52,3 +85,15 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

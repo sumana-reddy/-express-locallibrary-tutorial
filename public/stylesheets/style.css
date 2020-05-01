@@ -1,13 +1,24 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:orchid;
 }
-
-p {
-  color: rgb(85, 47, 146);
+a {
+  color:black;
 }
-
-h1 {
-  color: rgb(39, 95, 56);
+hr{
+  color:black;
 }
-
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+  background-color: rgb(179, 58, 58);
+}
+p{
+color:rgb(78, 78, 78)
+}
+h1{color: darkslategrey}
+li{
+color:rgb(78, 78, 78)
+}
