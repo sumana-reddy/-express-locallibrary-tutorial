@@ -28,6 +28,7 @@
 <img src="https://comps.canstockphoto.com/composition-with-vintage-old-hardback-stock-images_csp34114456.jpg" alt="book image" height="200" width="200" class="center">
 
 </article>
+</body>
 
 <ul>
       <li> strong Books: 10</li>
