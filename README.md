@@ -4,7 +4,9 @@
 <header>
   <h2>Welcome to Local Library</h2>
 </header>
-
+<head>
+<link rel="stylesheets" href="style.css">
+</head>
 
 <section>
   <nav>
