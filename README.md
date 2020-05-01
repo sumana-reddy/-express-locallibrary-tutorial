@@ -6,9 +6,7 @@
 <body>
 <header>
   <h2>Welcome to Local Library</h2>
-</header>
-<section>
-  <nav>
+
 <ul>
   <li>Home</li>
   <li>All Books</li>

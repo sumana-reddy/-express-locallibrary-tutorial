@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1= title
-  p Welcome to  LocalLibrary, a very basic Express website developed as a tutorial example on the Mozilla Developer Network.
+  p Welcome to #[em Lindsay's LocalLibrary], a very basic Express website developed as a tutorial example on the Mozilla Developer Network.
   p We have very few books at the moment feel free to add more.
   h1 Library Records
 
@@ -11,11 +11,10 @@ block content
   else
     p The library has the following record counts:
 
-    <ul>
-  <li>Home</li>
-  <li>All Books: 10</li>
-  <li>All Authors: 5</li>
-  <li>All genres: 01</li>
-  <li>All Book-instances: 7</li>
-</ul>
-  img.className#IdName(src="https://comps.canstockphoto.com/composition-with-vintage-old-hardback-stock-images_csp34114456.jpg" alt="book image")s
+    ul
+      li #[strong Books:] !{data.book_count}
+      li #[strong Copies:] !{data.book_instance_count}
+      li #[strong Copies available:] !{data.book_instance_available_count} 
+      li #[strong Authors:] !{data.author_count}
+      li #[strong Genres:] !{data.genre_count}
+  img.className#IdName(src="https://comps.canstockphoto.com/composition-with-vintage-old-hardback-stock-images_csp34114456.jpg" alt="book image")

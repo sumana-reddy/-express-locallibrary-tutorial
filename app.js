@@ -1,34 +1,5 @@
-Skip to content
-Why GitHub? 
-Team
-Enterprise
-Explore 
-Marketplace
-Pricing 
-Search
-
-Sign in
-Sign up
-LinGill21
-/
-express-locallibrary-tutorial-MVCDemo
-102
- Code
- Issues 0
- Pull requests 0 Actions
- Projects 0
- Security 0
- Insights
-Join GitHub today
-GitHub is home to over 40 million developers working together to host and review code, manage projects, and build software together.
-
-express-locallibrary-tutorial-MVCDemo/app.js /
-@LinGill21 LinGill21 preped fro heroku
-f94206e 3 days ago
-58 lines (48 sloc)  1.68 KB
-  
 const createError = require('http-errors');
-const express = require('express');
+const express = require("express-validator");
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -85,15 +56,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About

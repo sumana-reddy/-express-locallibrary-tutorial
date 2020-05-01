@@ -1,5 +1,5 @@
 {
-  "name": "express-locallibrary-tutorial-mvcdemo",
+  "name": "-express-locallibrary-tutorial",
   "version": "0.0.0",
   "engines": {
     "node": "10.15.1"
@@ -15,7 +15,7 @@
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "express": "~4.16.1",
-    "express-validator": "^6.4.0",
+    "express-validator": "^6.4.1",
     "helmet": "^3.22.0",
     "http-errors": "~1.6.3",
     "moment": "^2.24.0",
