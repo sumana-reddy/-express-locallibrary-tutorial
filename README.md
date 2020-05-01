@@ -2,14 +2,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head><title colour="green;">Welcome to Local Library</title>
+<head>
+<title style="color:red">Welcome to Local Library</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
-</script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-</script><link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body style="background-color:lightgrey;">
 <div class="container-fluid">
@@ -49,12 +49,11 @@
 </div>
 <div class="col-sm-10">
 <h1 style="color:#FF0000";>Welcome to my Library</h1>
-<h1 style="color:green";>LocalLibrary to show patrons available books.<img src= "https://comps.canstockphoto.com/composition-with-vintage-old-hardback-stock-images_csp34114456.jpg">
-</h1>
-<p>Welcome to <em>LocalLibrary</em>, a very basic Express website developed as a tutorial example on the Mozilla Developer Network.
-</p>
+<h1 style="color:green";>LocalLibrary to show patrons available books.
+<p>Welcome to <em>LocalLibrary</em>, a very basic Express website.</p>
 <h1>Books Available</h1>
 <p>The library has the following Number of books:</p>
 <ul>
-<li><strong>Books:</strong> 50</li><li><strong>Copies:</strong> 39</li><li><strong>Copies available:15</strong> 0</li><li><strong>Authors:</strong> 5</li><li><strong>Genres:</strong> 6</li></ul></div></div></div></body></html>
+<li><strong>Books:</strong> 50</li><li><strong>Copies:</strong> 39</li><li><strong>Copies available:15</strong> 0</li><li><strong>Authors:</strong> 5</li><li><strong>Genres:</strong> 6</li></ul>
+<img class="className" id="IdName" src="/images/book.jpg" alt="book image"></div></div></div></body></html>
 
