@@ -15,7 +15,7 @@
   <li>Create new Book</li>
   <li>Create new Book-instances copy</li>
 </ul>
-<h1 style="text-align:center;" style="color:#FF0000"; >LocalLibrary to show patrons available books. </h1>
+<h1 style="text-align:center;" style="color:#FF0000;" >LocalLibrary to show patrons available books. </h1>
 
 <img src="https://comps.canstockphoto.com/composition-with-vintage-old-hardback-stock-images_csp34114456.jpg" alt="book image" height="200" width="200" class="center">
 
