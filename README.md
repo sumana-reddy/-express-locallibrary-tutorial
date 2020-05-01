@@ -5,25 +5,22 @@
 
   <h2 style="text-align:center;" colour="green;">Welcome to Local Library</h2>
 
-<ul style="text-align:left;" colour="blue;">
-  <li>Home</li>
-  <li>All Books</li>
-  <li>All Authors</li>
-  <li>All genres</li>
-  <li>All Book-instances</li>
+<ul style="text-align:left;" colour="blue;"> 
+                                                   <img src="https://comps.canstockphoto.com/composition-with-vintage-old-hardback-stock-images_csp34114456.jpg" alt="book image" class="center">
+  <li style="color:blue">Home</li>
+  <li style="color:blue">All Books</li>
+  <li style="color:blue">All Authors</li>
+  <li style="color:blue">All genres</li>
+  <li style="color:blue">All Book-instances</li>
 </ul>
 
 <ul style="text-align:left;" colour="blue;">
-  <li>Create new Author</li>
-  <li>Create new Genre</li>
-  <li>Create new Book</li>
-  <li>Create new Book-instances copy</li>
+  <li style="color:blue">Create new Author</li>
+  <li style="color:blue">Create new Genre</li>
+  <li style="color:blue">Create new Book</li>
+  <li style="color:blue">Create new Book-instances copy</li>
 </ul>
-<h1 style="text-align:center;" colour="color:rgb(255,0,0);">LocalLibrary to show patrons available books. </h1>
-
-
-
-
+<h1 style="text-align:center;" style="color:rgb(255,0,0);">LocalLibrary to show patrons available books. </h1>
 
 <img src="https://comps.canstockphoto.com/composition-with-vintage-old-hardback-stock-images_csp34114456.jpg" alt="book image" height="200" width="200" class="center">
 
